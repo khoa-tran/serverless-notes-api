@@ -1,4 +1,11 @@
 # serverless-notes-api
+
+## Deploy
+Run the following:
+```
+serverless deploy -v
+```
+## Test locally
 1) Create new note: `POST /notes`:
 - Create an `event.json` file and add the following:
 ```javascript
