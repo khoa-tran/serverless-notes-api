@@ -72,3 +72,22 @@ serverless webpack invoke --function list --path event.json
 ```
 serverless webpack invoke --function update --path event.json
 ```
+5) Delete note: `DELETE /notes/{id}`:
+```javascript
+{
+  "pathParameters": {
+    "id": "578eb840-f70f-11e6-9d1a-1359b3b22944"
+  },
+  "requestContext": {
+    "authorizer": {
+      "claims": {
+        "sub": "USER-SUB-1234"
+      }
+    }
+  }
+}
+```
+- To invoke `delete` function in `serverless.yml`, excute the following from the command line:
+```
+serverless webpack invoke --function delete --path event.json
+```

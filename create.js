@@ -8,13 +8,13 @@ export async function main (event, context, callback) {
 
   const params = {
     TableName: 'notes',
-        // 'Item' contains the attributes of the item to be created
-        // - 'userId': because users are authenticated via Cognito User Pool, we
-        //             will use the User Pool sub (a UUID) of the authenticated user
-        // - 'noteId': a unique uuid
-        // - 'content': parsed from request body
-        // - 'attachment': parsed from request body
-        // - 'createdAt': current Unix timestamp
+    // 'Item' contains the attributes of the item to be created
+    // - 'userId': because users are authenticated via Cognito User Pool, we
+    //             will use the User Pool sub (a UUID) of the authenticated user
+    // - 'noteId': a unique uuid
+    // - 'content': parsed from request body
+    // - 'attachment': parsed from request body
+    // - 'createdAt': current Unix timestamp
     Item: {
       userId: event.requestContext.authorizer.claims.sub,
       noteId: uuid.v1(),
