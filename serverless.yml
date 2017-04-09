@@ -43,3 +43,12 @@ functions:
                 cors: true
                 authorizer:
                     arn: arn:aws:cognito-idp:us-west-2:596310897400:userpool/us-west-2_IJDrpYgOj
+    get:
+        handler: get.main
+        events:
+            - http:
+                path: notes/{id}
+                method: get
+                cors: true
+                authorizer:
+                    arn: arn:aws:cognito-idp:us-west-2:596310897400:userpool/us-west-2_IJDrpYgOj
