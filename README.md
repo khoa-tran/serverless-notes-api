@@ -52,3 +52,23 @@ serverless webpack invoke --function get --path event.json
 ```
 serverless webpack invoke --function list --path event.json
 ```
+4) Update note: `PUT /notes/{id}`:
+```javascript
+{
+  "body": "{\"content\":\"new world\",\"attachment\":\"new.jpg\"}",
+  "pathParameters": {
+    "id": "578eb840-f70f-11e6-9d1a-1359b3b22944"
+  },
+  "requestContext": {
+    "authorizer": {
+      "claims": {
+        "sub": "USER-SUB-1234"
+      }
+    }
+  }
+}
+```
+- To invoke `update` function in `serverless.yml`, excute the following from the command line:
+```
+serverless webpack invoke --function update --path event.json
+```
