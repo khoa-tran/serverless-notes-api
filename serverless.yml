@@ -43,11 +43,30 @@ functions:
                 cors: true
                 authorizer:
                     arn: arn:aws:cognito-idp:us-west-2:596310897400:userpool/us-west-2_IJDrpYgOj
+    # Defines an HTTP API endpoint that calls the main function in get.js
+    # - path: url path is /notes/{id}
+    # - method: GET request
+    # - cors: enabled CORS (Cross-Origin Resource Sharing) for browser cross domain api call
+    # - authorizer: authenticate the api via Cognito User Pool
     get:
         handler: get.main
         events:
             - http:
                 path: notes/{id}
+                method: get
+                cors: true
+                authorizer:
+                    arn: arn:aws:cognito-idp:us-west-2:596310897400:userpool/us-west-2_IJDrpYgOj
+    # Defines an HTTP API endpoint that calls the main function in list.js
+    # - path: url path is /notes
+    # - method: GET request
+    # - cors: enabled CORS (Cross-Origin Resource Sharing) for browser cross domain api call
+    # - authorizer: authenticate the api via Cognito User Pool
+    list:
+        handler: list.main
+        events:
+            - http:
+                path: notes
                 method: get
                 cors: true
                 authorizer:

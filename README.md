@@ -36,3 +36,19 @@ serverless webpack invoke --function create --path event.json
 ```
 serverless webpack invoke --function get --path event.json
 ```
+3) Get all notes: `GET /notes`:
+```javascript
+{
+  "requestContext": {
+    "authorizer": {
+      "claims": {
+        "sub": "USER-SUB-1234"
+      }
+    }
+  }
+}
+```
+- To invoke `list` function in `serverless.yml`, excute the following from the command line:
+```
+serverless webpack invoke --function list --path event.json
+```
