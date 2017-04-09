@@ -1,6 +1,12 @@
 # package directories
 node_modules
 jspm_packages
+.webpack
 
 # Serverless directories
 .serverless
+
+# atom-ternjs
+.tern-project
+
+
